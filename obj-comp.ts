@@ -29,10 +29,10 @@ type ComparisonResult = {
 
 export function compare(source: any, destination: any): Difference[] {
     const result = compareAt([], source, destination);
-    return compareAt([], source, destination).diffs;
+    return result.diffs;
 }
 
-export function compareAt(path: string[], source: any, destination: any): ComparisonResult {
+function compareAt(path: string[], source: any, destination: any): ComparisonResult {
     if (isObject(source) && isObject(destination)) {
         return compareObjectsAt(path, source, destination);
     } else {

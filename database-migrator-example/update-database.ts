@@ -1,6 +1,6 @@
 import { getSchema } from "./get-schema";
 import * as fs from "fs";
-import { compare } from "../json-diff";
+import { compare } from "../obj-comp";
 
 const pgp = require('pg-promise')({});
 

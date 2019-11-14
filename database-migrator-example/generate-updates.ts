@@ -1,4 +1,4 @@
-import { Difference } from "../json-diff";
+import { Difference } from "../obj-comp";
 import * as assert from "assert";
 
 export function generateUpdatesInSQL(diffs: Difference[]): string {

@@ -1,4 +1,4 @@
-import { compare, Difference } from "../json-diff";
+import { compare, Difference } from "../obj-comp";
 import * as fs from "mz/fs";
 import { generateUpdatesInSQL } from "./generate-updates";
 import { getSchema } from "./get-schema";
@@ -13,10 +13,10 @@ async function main() {
         console.log(`   postgres://localhost:5432/example_db`);
         return;
     }
-    
+
     const sourceSchema = await loadSchema(source);
     const destinationSchema = await loadSchema(destination);
-    
+
     const result = compare(sourceSchema, destinationSchema);
     console.log(generateUpdatesInSQL(result));
     process.exit();
