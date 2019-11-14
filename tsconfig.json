@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "lib": ["es2015"],
+        "esModuleInterop": true,
+        "declaration": true
+    },
+    "files": [
+        "json-diff.ts"
+    ]
+}

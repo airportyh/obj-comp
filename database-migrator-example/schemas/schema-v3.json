@@ -1,0 +1,40 @@
+{
+    "users": {
+        "description": "Users that can log into the system.",
+        "fields": {
+            "id": {
+                "type": "int",
+                "primary_key": true
+            },
+            "username": {
+                "type": "string",
+                "max_length": 200,
+                "required": true
+            },
+            "email": {
+                "type": "string",
+                "max_length": 200,
+                "required": true
+            },
+            "birth_date": {
+                "type": "date"
+            }
+        }
+    },
+    "articles": {
+        "description": "Articles that are being written or have been written.",
+        "fields": {
+            "id": {
+                "type": "int",
+                "primary_key": true
+            },
+            "title": {
+                "type": "string",
+                "max_length": 200
+            },
+            "content": {
+                "type": "string"
+            }
+        }
+    }
+}

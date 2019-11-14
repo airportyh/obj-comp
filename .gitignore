@@ -1,0 +1,4 @@
+/node_modules
+/dist
+/json-diff.js
+/json-diff.d.ts
