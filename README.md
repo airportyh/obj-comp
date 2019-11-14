@@ -110,3 +110,4 @@ If you'd like to learn more about this library, feel free to review:
 
 * [test.ts](test.ts)
 * [the source code](obj-comp.ts)
+* As an example of what you can do with this library, here is an [example database migration tool](database-migrator-example) made with `obj-comp`.
