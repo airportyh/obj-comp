@@ -73,15 +73,15 @@ and it lets you differentiate the 3 types of difference objects.
 { type: 'addition', path: [ 'age' ], value: 13 }
 ```
 
-Says that the destination object has an additional `age` property compared to the source whose
-value is 13.
+Says that the destination object has an additional `age` property compared to the source, and
+its value is 13.
 
 ```
 { type: 'addition', path: [ 'name', 'middle' ], value: 'James' }
 ```
 
 Says that the object within the destination's `name` property has an additional `middle`
-property compared to the source whose value is "James".
+property compared to the source, and its value is "James".
 
 ```
 { type: 'deletion', path: [ 'name', 'last' ] }
