@@ -1,9 +1,18 @@
 # obj-comp
 
 This library compares two arbitrarily nested JavaScript objects and returns
-an array of differences between the objects. Example:
+an array of differences between the objects.
+
+## Install
+
+```
+npm install obj-comp
+```
+
+## Example
 
 ```js
+const { compare } = require("obj-comp");
 const source = {
     name: {
         first: "Bob",
