@@ -1,4 +1,4 @@
 /node_modules
 /dist
-/json-diff.js
-/json-diff.d.ts
+/obj-comp.js
+/obj-comp.d.ts

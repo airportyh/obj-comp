@@ -2,8 +2,8 @@
   "name": "obj-comp",
   "version": "1.0.0",
   "description": "",
-  "main": "json-diff.js",
-  "types": "json-diff.d.ts",
+  "main": "obj-comp.js",
+  "types": "obj-comp.d.ts",
   "scripts": {
     "test": "jest",
     "prepublish": "tsc"

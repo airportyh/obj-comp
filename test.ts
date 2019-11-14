@@ -1,4 +1,4 @@
-import { compare, Difference } from "./json-diff";
+import { compare, Difference } from "./obj-comp";
 
 describe("json diff", () => {
     it("detects additional properties to object", () => {
