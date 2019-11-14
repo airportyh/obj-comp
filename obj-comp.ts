@@ -22,39 +22,30 @@ type Replacement = {
     newValue: any
 };
 
-type ComparisonResult = {
-    diffs: Difference[],
-    sourceValuesCount: number
-};
-
 export function compare(source: any, destination: any): Difference[] {
-    const result = compareAt([], source, destination);
-    return result.diffs;
+    return compareAt([], source, destination);
 }
 
-function compareAt(path: string[], source: any, destination: any): ComparisonResult {
+function compareAt(path: string[], source: any, destination: any): Difference[] {
     if (isObject(source) && isObject(destination)) {
         return compareObjectsAt(path, source, destination);
     } else {
         if (source === destination) {
-            return { diffs: [], sourceValuesCount: 1 };
+            return [];
         } else {
-            return {
-                diffs: [
-                    {
-                        type: "replacement",
-                        path: path,
-                        oldValue: source,
-                        newValue: destination
-                    }
-                ],
-                sourceValuesCount: 1
-            };
+            return [
+                {
+                    type: "replacement",
+                    path: path,
+                    oldValue: source,
+                    newValue: destination
+                }
+            ];
         }
     }
 }
 
-function compareObjectsAt(path: string[], source: any, destination: any): ComparisonResult {
+function compareObjectsAt(path: string[], source: any, destination: any): Difference[] {
     const sourceKeys = Object.keys(source);
     const destinationKeys = Object.keys(destination);
     const sourceOnlyKeys = difference(sourceKeys, destinationKeys);
@@ -77,16 +68,13 @@ function compareObjectsAt(path: string[], source: any, destination: any): Compar
         .reduce((diffs, key) => {
             const result = compareAt([...path, key], source[key], destination[key]);
             return [
-                ...result.diffs,
+                ...result,
                 ...diffs
             ];
         }, []);
-    return {
-        diffs: [
-            ...additions,
-            ...removals,
-            ...childDiffs
-        ],
-        sourceValuesCount: sourceOnlyKeys.length
-    };
+    return [
+        ...additions,
+        ...removals,
+        ...childDiffs
+    ];
 }
