@@ -1,6 +1,6 @@
 {
   "name": "obj-comp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "obj-comp.js",
   "types": "obj-comp.d.ts",
@@ -25,5 +25,9 @@
     "@types/pg-promise": "^5.4.3",
     "mz": "^2.7.0",
     "pg-promise": "^8.7.2"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/airportyh/obj-comp"
   }
 }
