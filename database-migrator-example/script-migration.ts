@@ -27,7 +27,7 @@ async function loadSchema(identifier: string): Promise<any> {
         const json = (await fs.readFile(identifier)).toString();
         return JSON.parse(json);
     } else if (identifier.startsWith("postgres://")) {
-        const db = pgp('postgres://localhost:5432/play_db');
+        const db = pgp(identifier);
         return await getSchema(db);
     }
 }
